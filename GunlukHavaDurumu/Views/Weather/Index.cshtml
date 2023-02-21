@@ -1,0 +1,45 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CodePen - Weather Popup/Widget</title>
+    <link rel="stylesheet" href="~/dist/style.css">
+
+</head>
+<body>
+    @using (Html.BeginForm())
+    {
+        <label>Şehir ismi giriniz:</label>
+        <input type="text" name="name" class="form-control" />
+        <button type="submit" class="btn btn-primary">Bul</button>
+    }
+
+
+    <!-- partial:index.partial.html -->
+
+    <div id="weather_wrapper">
+        <div class="weatherCard">
+            <div class="currentTemp">
+                <span class="temp">@ViewBag.temp&deg;</span>
+                <span class="location">@ViewBag.cityName</span>
+            </div>
+            <div class="currentWeather">
+                <span class="conditions">&#xf00d;</span>
+                <div class="info">
+                    <span class="rain">@ViewBag.weatherState</span>
+                    <span class="wind">@ViewBag.feelsLike&deg;</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- partial -->
+    <script src="~/dist/script.js"></script>
+
+</body>
+</html>
+
